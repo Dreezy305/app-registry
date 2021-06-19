@@ -1,0 +1,14 @@
+{
+  "name": "app-registry",
+  "version": "1.0.0",
+  "description": "app registry",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "contract",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.0.1"
+  }
+}
