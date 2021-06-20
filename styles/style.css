@@ -1,3 +1,9 @@
-ul {
-  background: linear-gradient rgba(to right #d122e3, #bb6ef5);
+.topnav {
+  background: linear-gradient(to right, #d122e3, #bb6ef5);
+}
+
+.link-text {
+  font-size: 2rem;
+  font-family: "Poppins";
+  font-weight: 600;
 }
