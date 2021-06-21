@@ -23,6 +23,10 @@
   /* border-radius: 50%; */
 }
 
+.icon-text:hover {
+  color: blue;
+}
+
 .footer-socials {
   text-decoration: none;
   color: #d122e3;
