@@ -7,6 +7,12 @@
   font-family: "Poppins";
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 .icon-style {
   width: 100px;
   height: 100px;
