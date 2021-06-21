@@ -1,9 +1,20 @@
 .topnav {
   background: linear-gradient(to right, #d122e3, #bb6ef5);
+  position: sticky;
 }
 
 .link-text {
-  font-size: 2rem;
   font-family: "Poppins";
-  font-weight: 600;
 }
+
+.icon-style {
+  width: 100px;
+  height: 100px;
+  /* border-radius: 50%; */
+}
+
+/* @media screen (max-width: 576px) {
+  .link-text {
+    font-size: 10px;
+  }
+} */
