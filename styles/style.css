@@ -23,6 +23,15 @@
   /* border-radius: 50%; */
 }
 
+.footer-socials {
+  text-decoration: none;
+  color: #d122e3;
+}
+
+.footer-socials:hover {
+  color: #bb6ef5;
+}
+
 /* @media screen (max-width: 576px) {
   .link-text {
     font-size: 10px;
