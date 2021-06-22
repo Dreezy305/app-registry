@@ -24,7 +24,7 @@
                 role="tab" aria-controls="v-pills-home" aria-selected="true">Apps</a>
         </li>
         <li class="nav-item">
-            <a href="" class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button"
+            <a href="" class="nav-link tablink" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" onclick="openPage('Wallet', 'Registry wallet')"
                 role="tab" aria-controls="v-pills-profile" aria-selected="false">
                 <img src="./icons/nav-icons/walletconnect-logo.svg" alt="wallet-icon" class="">
             </a>
@@ -531,6 +531,7 @@
                 </div>
             </div> 
         </div>
+
     </main>
     
     <!-- footer section goes here -->
@@ -574,24 +575,7 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
     
-    <script>
-        function openPage(pageName, elmnt, color) {
-                var i, tabcontent, tablinks;
-                tabcontent = document.getElementsByClassName("tabcontent");
-                for (i = 0; i < tabcontent.length; i++) {
-                    tabcontent[i].style.display = "none";
-                }
-                tablinks = document.getElementsByClassName("tablink");
-                for (i = 0; i < tablinks.length; i++) {
-                    tablinks[i].style.backgroundColor = "";
-                }
-                document.getElementById(pageName).style.display = "block";
-                elmnt.style.backgroundColor = color;
-            }
-
-            // Get the element with id="defaultOpen" and click on it
-            document.getElementById("defaultOpen").click();
-    </script>
+    
 </body>
 
 </html>
