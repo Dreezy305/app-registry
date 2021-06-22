@@ -1,6 +1,7 @@
 .topnav {
   background: linear-gradient(to right, #d122e3, #bb6ef5);
   position: sticky;
+  height: 100px;
 }
 
 .link-text {
