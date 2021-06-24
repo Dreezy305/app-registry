@@ -37,7 +37,7 @@
   color: #bb6ef5;
 }
 
-/* @media screen (max-width: 576px) {
+/* @media screen and (max-width: 576px) {
   .link-text {
     font-size: 10px;
   }
