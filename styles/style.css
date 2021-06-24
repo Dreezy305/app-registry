@@ -1,6 +1,5 @@
 .topnav {
   background: linear-gradient(to right, #d122e3, #bb6ef5);
-  position: sticky;
   height: 100px;
 }
 
@@ -8,11 +7,11 @@
   font-family: "Poppins";
 }
 
-.sticky {
+/* .sticky {
   position: fixed;
   top: 0;
   width: 100%;
-}
+} */
 
 .registry {
   padding-top: 10px;
