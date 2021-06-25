@@ -9,6 +9,7 @@
   "author": "contract",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.0.1"
+    "bootstrap": "^5.0.1",
+    "mailgun-js": "^0.22.0"
   }
 }
