@@ -1,4 +1,4 @@
-// configuration goes here
+// mail configuration goes here
 
 const nodemailer = require("nodemailer");
 const mailGun = require("nodemailer-mailgun-transport");
@@ -13,8 +13,8 @@ const auth = {
 const transporter = nodemailer.createTransport(mailGun(auth));
 
 const mailOptions = {
-  from: "test@gmail.com",
-  to: "test@gmail.com",
+  from: "bankoleidris@gmail.com",
+  to: "bankoleidris@gmail.com",
   subject: "testing",
   text: "hey there",
 };

@@ -1,9 +1,9 @@
 const express = require("express");
-
-const app = express();
 const path = require("path");
 
-const PORT = 8070;
+const app = express();
+
+const PORT = 8080;
 
 // data parsing
 app.use(express.urlencoded({ extended: false }));
