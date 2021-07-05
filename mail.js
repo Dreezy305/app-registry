@@ -16,8 +16,8 @@ const sendMail = (email, subject, text) => {
   const mailOptions = {
     from: email,
     to: "bankoleidris@gmail.com",
-    subject: subject,
-    text: text,
+    subject,
+    text,
   };
 
   transporter.sendMail(mailOptions, function (err, data) {
