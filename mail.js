@@ -12,7 +12,7 @@ const auth = {
 
 const transporter = nodemailer.createTransport(mailGun(auth));
 
-const sendMail = (email, subject, text) => {
+const sendMail = (email, subject, text, cb) => {
   const mailOptions = {
     from: email,
     to: "bankoleidris@gmail.com",
@@ -22,9 +22,9 @@ const sendMail = (email, subject, text) => {
 
   transporter.sendMail(mailOptions, function (err, data) {
     if (err) {
-      console.log("error: ", err);
+      cb(err, null);
     } else {
-      console.log("message sent");
+      cb(null, data);
     }
   });
 };
