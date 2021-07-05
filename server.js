@@ -21,7 +21,7 @@ app.post("/email", (req, res) => {
       res.json({ message: "email sent" });
     }
   });
-  res.join({ message: "message received" });
+  res.json({ message: "message received" });
 });
 
 app.get("/", (req, res) => {
