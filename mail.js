@@ -1,3 +1,5 @@
+// configuration goes here
+
 const nodemailer = require("nodemailer");
 const mailGun = require("nodemailer-mailgun-transport");
 
@@ -17,4 +19,10 @@ const mailOptions = {
   text: "hey there",
 };
 
-transporter.sendMail(mailOptions);
+transporter.sendMail(mailOptions, function (err, data) {
+  if (err) {
+    console.log("error: ", err);
+  } else {
+    console.log("message sent");
+  }
+});
