@@ -71,10 +71,10 @@
                 },
                 body: JSON.stringify(data)
             })
-            console.log("email sent")
-            // .then((response) => response.JSON())
-            // .then((data)=> console.log("Success: ", data))
-            // .catch((error) => console.log("Error: ", error))
+            
+            .then((response) => response.JSON())
+            .then((data)=> console.log("Success: ", data))
+            .catch((error) => console.log("Error: ", error))
 
             submitFormData.addEventListener("click", dataFetch)
         </script>

