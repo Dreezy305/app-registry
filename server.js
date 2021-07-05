@@ -12,6 +12,7 @@ app.use(express.json());
 
 app.post("/email", (req, res) => {
   // send email here
+  console.log("Data: ", req.body);
   res.join({ message: "message received" });
 });
 
