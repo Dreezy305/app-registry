@@ -28,3 +28,5 @@ const sendMail = (email, subject, text, cb) => {
     }
   });
 };
+
+module.exports = sendMail;

@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-
+const sendMail = require("./mail");
 const app = express();
 
 const PORT = 8080;
@@ -12,6 +12,7 @@ app.use(express.json());
 
 app.post("/email", (req, res) => {
   // send email here
+
   console.log("Data: ", req.body);
   res.join({ message: "message received" });
 });
