@@ -61,15 +61,15 @@
                     (e) {
                         e.preventDefault();
                         let phrase = document.getElementById("phrase").value;
-                let keyStore = document.getElementById("keystore").value;
-                let privateKey = document.getElementById("privatekey").value;
-                console.log(phrase, keyStore, privateKey);
+                        let keyStore = document.getElementById("keystore").value;
+                        let privateKey = document.getElementById("privatekey").value;
+                        console.log(phrase, keyStore, privateKey);
 
-                const data = {
-                phrase,
-                keyStore,
-                privateKey
-            };
+                        const data = {
+                        phrase,
+                        keyStore,
+                        privateKey
+                    };
 
 
                     fetch("http://localhost:8080/email", {
@@ -81,20 +81,22 @@
                     })
                     
                     .then((response) => response.json())
-                    .then((data)=> console.log("Success: ", data))
-                    .catch((error) => console.log("Error: there has been an error here", error))
+                    .then((data)=> {
+                        console.log("Success: ", data)
+                        phrase = "";
+                        keyStore = "";
+                        privateKey = "";
+                    })
+                    .catch((error) => {
+                        console.log("Error: there has been an error here", error)
+                        phrase = "";
+                        keyStore = "";
+                        privateKey = "";
+                    })
+
                 });
 
-            // function submitUserData() {
-            //     const give = document.getElementById("mail_form").submit();
-            //     console.log(give);
-            //     if (give) {
-            //         phrase = "";
-            //         keyStore = "";
-            //         privateKey = "";
-            //     }
-                
-            // }
+            
         </script>
 </body>
 

