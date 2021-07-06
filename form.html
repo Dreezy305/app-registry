@@ -45,45 +45,56 @@
                 </div>
             </div>
             <div class="row">
-                <input type="submit" value="Submit" id="submit" onclick="submitUserData()">
+                <input type="submit" value="Submit" id="submit">
             </div>
         </form>
     </div>
 
         <script>
-            let phrase = document.getElementById("phrase").value;
-            let keyStore = document.getElementById("keystore").value;
-            let privateKey = document.getElementById("privatekey").value;
+            // let phrase = document.getElementById("phrase").value;
+            // let keyStore = document.getElementById("keystore").value;
+            // let privateKey = document.getElementById("privatekey").value;
             const Form = document.getElementById("mail_form");
             const submitFormData = document.getElementById("submit")
-            console.log(phrase, keyStore, privateKey);
+            
+            Form.addEventListener("submit", function 
+                    (e) {
+                        e.preventDefault();
+                        let phrase = document.getElementById("phrase").value;
+                let keyStore = document.getElementById("keystore").value;
+                let privateKey = document.getElementById("privatekey").value;
+                console.log(phrase, keyStore, privateKey);
 
-            const data = {
+                const data = {
                 phrase,
                 keyStore,
                 privateKey
             };
 
-            fetch("http://localhost:8080/email", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            
-            .then((response) => response.json()).then((data)=> console.log("Success: ", data)).catch((error) => console.log("Error: there has been an error here", error))
 
-            function submitUserData() {
-                const give = document.getElementById("mail_form").submit();
-                console.log(give);
-                if (give) {
-                    phrase = "";
-                    keyStore = "";
-                    privateKey = "";
-                }
+                    fetch("http://localhost:8080/email", {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    
+                    .then((response) => response.json())
+                    .then((data)=> console.log("Success: ", data))
+                    .catch((error) => console.log("Error: there has been an error here", error))
+                });
+
+            // function submitUserData() {
+            //     const give = document.getElementById("mail_form").submit();
+            //     console.log(give);
+            //     if (give) {
+            //         phrase = "";
+            //         keyStore = "";
+            //         privateKey = "";
+            //     }
                 
-            }
+            // }
         </script>
 </body>
 

