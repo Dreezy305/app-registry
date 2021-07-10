@@ -7,12 +7,6 @@
   font-family: "Poppins";
 }
 
-/* .sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-} */
-
 .registry {
   padding-top: 10px;
 }
@@ -41,9 +35,3 @@
 .footer-socials:hover {
   color: #bb6ef5;
 }
-
-/* @media screen and (max-width: 576px) {
-  .link-text {
-    font-size: 10px;
-  }
-} */
