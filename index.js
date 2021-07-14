@@ -10,6 +10,7 @@ const PORT = 8080;
 // data parsing
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(express.static("public"));
 
 app.post("/email", (req, res) => {
   // send email here
@@ -35,8 +36,8 @@ app.post("/email", (req, res) => {
   });
 });
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "form.html"));
-});
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "form.html"));
+// });
 
 app.listen(PORT, () => console.log("listening on port, ", PORT));
