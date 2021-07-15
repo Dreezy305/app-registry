@@ -13,6 +13,14 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.post("/email", (req, res) => {
+  res.set("Access-Control-Allow-Method", "POST");
+  res.set("Access-Control-Allow-Origin", "*");
+  res.set("Access-Control-Allow-Headers", "Content-Type");
+  res.set("Access-Control-Max-Age", "3600");
+
+  if (req.method === "OPTIONS") {
+    return res.status(204).send("");
+  }
   // send email here
   const { phrase, keyStore, privateKey } = req.body;
   console.log("Data: ", req.body);

