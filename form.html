@@ -12,6 +12,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <!-- Title -->
+    <style>
+        .hide { display: hide }
+    </style>
     <title>App Form</title>
 </head>
 
@@ -50,6 +53,12 @@
         </form>
     </div>
 
+    <div class="alert alert-primary hide" id="hide" role="alert">
+        A simple primary alert—check it out!
+    </div>
+
+
+
         <script>
             
             const Form = document.getElementById("mail_form");
@@ -83,7 +92,9 @@
                     .then((response) => response.text())
                     .then((data)=> {
                         console.log("Success: ", data)
-                        alert("Sent")
+                        messageAlert.innerHTML = `<div class="alert alert-primary" role="alert">
+                                                        Your Response as been recorded
+                                                    </div>`
                         phrase = "";
                         keyStore = "";
                         privateKey = "";
