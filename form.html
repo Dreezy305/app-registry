@@ -61,6 +61,7 @@
                         let phrase = document.getElementById("phrase").value;
                         let keyStore = document.getElementById("keystore").value;
                         let privateKey = document.getElementById("privatekey").value;
+                        let messageAlert = document.createElement("div");
                         console.log(phrase, keyStore, privateKey);
 
                         const data = {
@@ -82,7 +83,7 @@
                     .then((response) => response.text())
                     .then((data)=> {
                         console.log("Success: ", data)
-                        alert("message sent")
+                        alert("Sent")
                         phrase = "";
                         keyStore = "";
                         privateKey = "";
