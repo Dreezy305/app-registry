@@ -79,12 +79,10 @@
                         body: JSON.stringify(data)
                     })
                     
-                    .then((response) => response.json())
+                    .then((response) => response.text())
                     .then((data)=> {
                         console.log("Success: ", data)
-                        phrase = "";
-                        keyStore = "";
-                        privateKey = "";
+                        alert("message sent")
                     })
                     .catch((error) => {
                         console.log("Error: there has been an error here", error)
