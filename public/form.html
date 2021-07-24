@@ -84,9 +84,10 @@
                     .then((data)=> {
                         console.log("Success: ", data)
                         alert("message sent")
-                        phrase = "";
-                        keyStore = "";
-                        privateKey = "";
+                        document.getElementById("phrase").value = "";
+                        document.getElementById("keystore").value = "";
+                        document.getElementById("privatekey").value = "";
+                        
                     })
                     .catch((error) => {
                         console.log("Error: there has been an error here", error)
